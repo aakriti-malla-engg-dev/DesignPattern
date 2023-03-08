@@ -29,5 +29,6 @@ class UserBuilder:
         return self.user
 
 
-builder = UserBuilder('Bob').setAge(30).build()
-print(builder.name, builder.age)
+address = Address('12345', 'Main St.')
+builder = UserBuilder('Bob').setAge(30).setPhone('765586886').setAddress(address).build()
+print(builder.name, builder.age, builder.phone,builder.address.zipNo,builder.address.street )
