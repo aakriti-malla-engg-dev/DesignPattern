@@ -5,30 +5,12 @@ class Address:
 
 
 class User:
-    def __init__(self, name):
+    def __init__(self, name, age=None, phone=1279127971, address=None):
         self.name = name
+        self.age = age
+        self.phone = phone
+        self.address = address
 
 
-class UserBuilder:
-    def __init__(self, name):
-        self.user = User(name)
-
-    def setAge(self, age):
-        self.user.age = age
-        return self
-
-    def setPhone(self, phone):
-        self.user.phone = phone
-        return self
-
-    def setAddress(self, address):
-        self.user.address = address
-        return self
-
-    def build(self):
-        return self.user
-
-
-address = Address('12345', 'Main St.')
-builder = UserBuilder('Bob').setAge(30).setPhone('765586886').setAddress(address).build()
-print(builder.name, builder.age, builder.phone,builder.address.zipNo,builder.address.street )
+user = User('Bob', age=10, phone=4884377, address=Address('11', 'Main'))
+print(user.name, user.age, user.phone, user.address.zipNo, user.address.street)
